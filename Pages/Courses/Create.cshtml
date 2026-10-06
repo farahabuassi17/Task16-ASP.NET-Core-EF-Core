@@ -1,0 +1,53 @@
+@page
+@model Task16WebApp.Pages.Courses.CreateModel
+
+<div class="container mt-4">
+
+    <h1>Add Course</h1>
+    <p class="text-muted">Add a new course to CampusFlow</p>
+
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+
+            <form method="post">
+
+                <div class="mb-3">
+                    <label asp-for="Course.Name" class="form-label">
+                        Course Name
+                    </label>
+
+                    <input asp-for="Course.Name"
+                           class="form-control"
+                           placeholder="Enter course name" />
+
+                    <span asp-validation-for="Course.Name"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Course.CreditHours"
+                           class="form-label">
+                        Credit Hours
+                    </label>
+
+                    <input asp-for="Course.CreditHours"
+                           class="form-control" />
+
+                    <span asp-validation-for="Course.CreditHours"
+                          class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Add Course
+                </button>
+
+                <a asp-page="Index" class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

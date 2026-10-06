@@ -1,0 +1,52 @@
+@page
+@model Task16WebApp.Pages.Students.DeleteModel
+
+<div class="container mt-4">
+
+    <h1>Delete Student</h1>
+
+    <div class="alert alert-danger mt-3">
+        Are you sure you want to delete this student?
+    </div>
+
+    <div class="card shadow-sm">
+
+        <div class="card-body">
+
+            <div class="mb-3">
+                <strong>Student Name:</strong>
+                <span>@Model.Student.Name</span>
+            </div>
+
+            <div class="mb-3">
+                <strong>Email:</strong>
+                <span>@Model.Student.Email</span>
+            </div>
+
+            <div class="mb-3">
+                <strong>Course:</strong>
+                <span>@Model.Student.Course.Name</span>
+            </div>
+
+            <form method="post">
+
+                <input type="hidden"
+                       asp-for="Student.StudentId" />
+
+                <button type="submit"
+                        class="btn btn-danger">
+                    Delete
+                </button>
+
+                <a asp-page="Index"
+                   class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+@page
+@model Task16WebApp.Pages.Courses.DetailsModel
+
+<div class="container mt-4">
+
+    <h1>Course Details</h1>
+    <p class="text-muted">View course information</p>
+
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+
+            <div class="mb-3">
+                <strong>Course ID:</strong>
+                <span>@Model.Course.CourseId</span>
+            </div>
+
+            <div class="mb-3">
+                <strong>Course Name:</strong>
+                <span>@Model.Course.Name</span>
+            </div>
+
+            <div class="mb-3">
+                <strong>Credit Hours:</strong>
+                <span>@Model.Course.CreditHours</span>
+            </div>
+
+            <a asp-page="Edit"
+               asp-route-id="@Model.Course.CourseId"
+               class="btn btn-primary">
+                Edit
+            </a>
+
+            <a asp-page="Index"
+               class="btn btn-secondary">
+                Back to Courses
+            </a>
+
+        </div>
+    </div>
+
+</div>

@@ -11,4 +11,6 @@ public class Student
     public int CourseId { get; set; }
 
     public Course Course { get; set; } = null!;
+
+    public string? ImagePath { get; set; }
 }

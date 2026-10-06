@@ -1,0 +1,84 @@
+@page
+@model Task16WebApp.Pages.Students.DetailsModel
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="container mt-4">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-7">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+                    <h3 class="mb-0">Student Details</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <!-- Student Image -->
+                    <div class="text-center mb-4">
+
+                        @if (!string.IsNullOrEmpty(Model.Student.ImagePath))
+                        {
+                            <img src="@Model.Student.ImagePath" alt="@Model.Student.Name" width="150" height="150"
+                                 class="rounded-circle shadow-sm" style="object-fit: cover;" />
+                        }
+                        else
+                        {
+                            <div class="text-muted">
+                                No Image
+                            </div>
+                        }
+
+                    </div>
+
+                    <!-- Student ID -->
+                    <div class="mb-3">
+                        <strong>Student ID:</strong>
+                        <span>@Model.Student.StudentId</span>
+                    </div>
+
+                    <!-- Student Name -->
+                    <div class="mb-3">
+                        <strong>Name:</strong>
+                        <span>@Model.Student.Name</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <strong>Email:</strong>
+                        <span>@Model.Student.Email</span>
+                    </div>
+
+                    <!-- Course -->
+                    <div class="mb-3">
+                        <strong>Course:</strong>
+                        <span>@Model.Student.Course?.Name</span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="mt-4">
+
+                        <a asp-page="Edit" asp-route-id="@Model.Student.StudentId" class="btn btn-warning">
+                            Edit
+                        </a>
+
+                        <a asp-page="Index" class="btn btn-secondary">
+                            Back to Students
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
